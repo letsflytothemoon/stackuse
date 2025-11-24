@@ -11,12 +11,13 @@ int milliseconds() {
 	return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - startTime).count();
 }
 
-int sockscounter = 10;
+int sockscounter = 100;
 
 int socket() {
 	std::cout << "created socket " << sockscounter << std::endl;
 	return sockscounter++;
 }
+
 void connect(int sock, const char* address) {
 	std::cout << "connect " << sock << " socket to " << address << std::endl;
 }

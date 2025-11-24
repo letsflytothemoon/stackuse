@@ -16,12 +16,16 @@ int main(int argc, char* argv[]) {
     
     stateStack.Push<Connecting>(contextStack);
 
-    while(true)
-        try {
-            stateStack.Top().Update()(stateStack);
-        } catch (const char* msg) {
-            std::cout << msg << std::endl;
+    
+    try {
+        while(true) {
+            auto result = stateStack.Top().Update();
+            result(stateStack);
         }
+    }
+    catch (const char* msg) {
+        std::cout << msg << std::endl;
+    }
     
     stateStack.Pop();
 

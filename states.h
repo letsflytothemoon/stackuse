@@ -27,7 +27,7 @@ public:
 	}
 
 	UpdateResult Update() override {
-		return [](const stack::DynamicStack<State>&){};
+		return [](stack::DynamicStack<State>&){};
 	}
 
 	~Connected() { }
